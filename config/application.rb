@@ -34,7 +34,7 @@ module App
         fixtures: true,
         view_specs: false,
         helper_specs: false,
-        routing_specs: false,
+        routing_specs: false
     end
   end
 end

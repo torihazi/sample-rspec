@@ -1,17 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-  # pendingってなんでしょうね。
-  # とりあえず describeというのがまとまりなのかな
-  it "is valid with a first name, last name, email, and password" do
-    user = User.new(
-      first_name: "John",
-      last_name: "Doe",
-      email: "john.doe@example.com",
-      password: "password"
-    )
-    expect(user).to be_valid
+
+  # 有効なファクトリを持つこと
+  it "has a valid factory" do
+    expect(FactoryBot.build(:user)).to be_valid
   end
 
   it "is invalid without a first name" do

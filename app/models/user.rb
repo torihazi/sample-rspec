@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :projects, dependent: :destroy
+  has_many :notes, dependent: :destroy
 
   def full_name
     "#{first_name} #{last_name}"

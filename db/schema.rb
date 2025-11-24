@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_23_110527) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_24_110205) do
+  create_table "notes", force: :cascade do |t|
+    t.text "message"
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_notes_on_project_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"

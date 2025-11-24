@@ -5,4 +5,6 @@ class Project < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
+  has_many :notes, dependent: :destroy
+
 end

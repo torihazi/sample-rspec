@@ -5,4 +5,8 @@ class Project < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
+
+  scope :search, ->(term) {
+    where("LOWER(name) LIKE ?", "%#{term.downcase}%")
+  }
 end
